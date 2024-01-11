@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+}
+
+#root {
+    margin: 0 auto;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    padding: 45px 100px;
+    max-width: 1440px;
+
+    @media (max-width:425px) {
+        padding: 20px;
+        max-width: 375px;
+    }
+}
+
+/* Variables*/
+$main-color: #FF6060;
+$secondary-color: #000000;
+$background: #F6F6F6;
