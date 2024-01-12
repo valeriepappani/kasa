@@ -1,0 +1,42 @@
+@import 'index.scss';
+
+.Banner {
+    // background-image: url(./../assets/fond-kasa-banner.jpg);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./../assets/fond-kasa-banner.jpg);
+    background-size: cover;
+    background-position: center;
+    max-width: 1240px;
+    height: 223px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 45px 100px;
+    border-radius: 25px;
+
+    @media (max-width: 425px) {
+        height: 111px;
+        margin: 20px;
+    }
+
+    &__title {
+        color: #FFF;
+        font-size: 48px;
+        font-weight: 500;
+        padding: 20px;
+
+        @media (max-width: 425px) {
+            font-size: 24px;
+            padding: 30px 15px;
+            width: 100%;
+        }
+    }
+
+    .break {
+        display: none;
+
+        @media (max-width:425px) {
+            display: block;
+        }
+    }
+
+}
