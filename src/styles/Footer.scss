@@ -1,0 +1,41 @@
+@import 'index.scss';
+
+.footer {
+    background-color: $secondary-color;
+    padding-top: 66px;
+    padding-bottom: 29px;
+
+    @media (max-width:425px) {
+        padding-top: 66px;
+        padding-bottom: 58px;
+    }
+
+    &__elem {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 29px;
+
+        @media (max-width:425px) {
+            gap: 0;
+        }
+
+        &--logo {
+            height: 40px;
+        }
+
+        &--content {
+            color: white;
+            // font-size: 24px;
+            // font-family: "Montserrat", sans-serif;
+
+            @media (max-width:425px) {
+                width: 130px;
+                // font-size: 12px;
+                text-align: center;
+            }
+        }
+    }
+
+}
