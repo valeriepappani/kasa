@@ -1,7 +1,9 @@
+import BannerPropos from '../../components/BannerPropos'
+
 function Propos() {
     return (
         <div>
-            <h1>À propos </h1>
+            <BannerPropos />
         </div>
     )
 }

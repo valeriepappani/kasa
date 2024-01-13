@@ -6,7 +6,9 @@ import Logo from '../../assets/Kasa-logo.png'
 function Header() {
   return (
     <nav className="navbar">
-      <img src={Logo} alt='logo-kasa' className='navbar__logo' />
+      <Link to="/" className="navbar__logo">
+        <img src={Logo} alt='logo-kasa' className='navbar__logo' />
+      </Link>
       <div>
         <Link to="/Accueil" className="navbar__link">Accueil</Link>
         <Link to="/Propos" className="navbar__link">À propos</Link>

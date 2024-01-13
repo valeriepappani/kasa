@@ -14,10 +14,11 @@
     }
 
     &__logo {
-        width: 15%;
+        width: auto;
+        height: 68px;
 
         @media (max-width:425px) {
-            width: 20%;
+            height: 30px;
         }
     }
 

@@ -1,10 +1,6 @@
 @import 'index.scss';
 
 .Banner {
-    // background-image: url(./../assets/fond-kasa-banner.jpg);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./../assets/fond-kasa-banner.jpg);
-    background-size: cover;
-    background-position: center;
     max-width: 1240px;
     height: 223px;
     display: flex;
@@ -16,6 +12,18 @@
     @media (max-width: 425px) {
         height: 111px;
         margin: 20px;
+    }
+
+    &.accueil {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/fond-kasa-banner.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    &.propos {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./../assets/fond-banner-propos-kasa.jpg);
+        background-size: cover;
+        background-position: center;
     }
 
     &__title {
