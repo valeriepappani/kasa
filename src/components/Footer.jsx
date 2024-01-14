@@ -1,6 +1,6 @@
-import '../../styles/index.scss'
-import '../../styles/Footer.scss'
-import LogoBlanc from '../../assets/Kasa-logo-blanc.png'
+import '../styles/index.scss'
+import '../styles/Footer.scss'
+import LogoBlanc from '../assets/Kasa-logo-blanc.png'
 
 
 function Footer() {

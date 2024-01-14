@@ -1,6 +1,6 @@
-import BannerPropos from '../../components/BannerPropos'
-import Collapse from '../../components/collapse'
-import '../../styles/collapse.scss'
+import BannerPropos from '../components/BannerPropos'
+import Collapse from '../components/collapse'
+import '../styles/collapse.scss'
 
 function Propos() {
     return (

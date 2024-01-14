@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import '../../styles/index.scss'
-import '../../styles/Header.scss'
-import Logo from '../../assets/Kasa-logo.png'
+import '../styles/index.scss'
+import '../styles/Header.scss'
+import Logo from '../assets/Kasa-logo.png'
 
 function Header() {
   return (

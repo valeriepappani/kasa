@@ -9,7 +9,13 @@
 }
 
 .collapse {
-    width: 1023px;
+    width: 70%;
+
+    @media (max-width: 425px) {
+        width: 90%;
+        padding: 0 20px;
+    }
+
 
     &__encart {
         display: flex;
@@ -25,9 +31,10 @@
         color: white;
         margin: 0;
 
-        &:hover {
-            cursor: pointer;
+        @media (max-width: 425px) {
+            font-size: 13px;
         }
+
     }
 
     &__content {
@@ -37,12 +44,19 @@
         font-weight: 400;
         color: $main-color;
         margin: 0;
+
+        @media (max-width: 425px) {
+            font-size: 12px;
+        }
     }
 
     &__icon {
         cursor: pointer;
-    }
 
+        @media (max-width: 425px) {
+            width: 12px;
+        }
+    }
 }
 
 .ouvert {

@@ -1,4 +1,4 @@
-import '../../styles/Banner.scss'
+import '../styles/Banner.scss'
 
 
 function BannerPropos() {
