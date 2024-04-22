@@ -3,6 +3,7 @@ import Collapse from '../components/collapse'
 import '../styles/collapse.scss'
 
 function Propos() {
+    
     return (
         <div>
             <BannerPropos />
