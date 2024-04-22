@@ -6,14 +6,21 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
+    width: 70%;
+    margin-right:auto;
+    margin-left:auto;
+
+    @media(max-width: 425px) {
+        width:100%;
+    }
 }
 
 .collapse {
-    width: 70%;
+    width: 100%;
 
     @media (max-width: 425px) {
         width: 90%;
-        padding: 0 20px;
+        margin: 0 20px;
     }
 
 
@@ -22,12 +29,13 @@
         align-items: center;
         justify-content: space-between;
         background-color: $main-color;
-        padding: 10px 15px;
+        padding: 10px 20px 10px 10px;
+        border-radius: 10px;
     }
 
     &__title {
-        font-size: 24px;
-        font-weight: 500;
+        font-size: 18px;
+        font-weight: 700;
         color: white;
         margin: 0;
 

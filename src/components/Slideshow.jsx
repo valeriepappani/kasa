@@ -14,23 +14,26 @@ function Slideshow({ ficheSelection }) {
         setActiveIndex((prevIndex) => (prevIndex === 0 ? ficheSelection.pictures.length - 1 : prevIndex - 1));
     };
 
+    // Numéro de la diapositive
+    const currentSlideNumber = activeIndex + 1;
+    const totalSlides = ficheSelection.pictures.length;
 
     return (
         <div className="slider">
             <div className="slider__prev" onClick={prevSlide}>
                 <img src={Left} alt="left arrow" />
             </div>
-                {ficheSelection.pictures.map((picture, index) => (
-                    <div key={index} className={index === activeIndex ? 'slide active' : 'slide'}>
-                        <img src={picture} alt={`pic ${index + 1}`} className="slider__img"/>
-                    </div>
-
-                ))}
+            {ficheSelection.pictures.map((picture, index) => (
+                <div key={index} className={index === activeIndex ? 'slide active' : 'slide'}>
+                    <img src={picture} alt={`pic ${index + 1}`} className="slider__img"/>
+                </div>
+            ))}
             <div className="slider__next" onClick={nextSlide}>
                 <img src={Right} alt="right arrow" />
             </div>
+            <div className="slider__counter"><p>{currentSlideNumber} / {totalSlides}</p></div>
         </div>
     );
 }
 
-export default Slideshow
+export default Slideshow;

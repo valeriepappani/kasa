@@ -36,7 +36,8 @@ function Location() {
             <div className="ficheAppart__part2">
                 <Collapse
                     title="Description"
-                    content={ficheSelection.description} />
+                    content={ficheSelection.description} 
+                    className="ficheAppart__part2--collapse"/>
                 <Collapse
                     title="Équipements"
                     content={
