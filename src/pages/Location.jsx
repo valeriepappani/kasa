@@ -3,16 +3,16 @@ import data from '../datas/logements.json';
 import '../styles/Location.scss';
 import Collapse from '../components/collapse';
 import Slideshow from '../components/Slideshow';
+import Rating from '../components/rating'
 import { useParams } from 'react-router-dom';
 
 function Location() {
 
-    const { id } = useParams(); // Obtenez l'ID de l'URL
+    const { id } = useParams(); // Id de l'url
     const ficheSelection = data.find((element) => element.id === id); 
 
     return (
         <div className="ficheAppart">
-            {/* Intégration du composant Slideshow */}
             <Slideshow ficheSelection={ficheSelection} />
             <div className="ficheAppart__part1">
                 <div className="ficheAppart__part1--titre">
@@ -29,7 +29,8 @@ function Location() {
                         <p className="ficheAppart__host--name">{ficheSelection.host.name}</p>
                         <img className="ficheAppart__host--picture" src={ficheSelection.host.picture} alt="" />
                     </div>
-                    <p>{ficheSelection.rating}</p>
+                    {/* <p>{ficheSelection.rating}</p> */}
+                    <Rating value={ficheSelection.rating} />                    
                 </div>
             </div>
 

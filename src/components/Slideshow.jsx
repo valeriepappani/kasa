@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/Slideshow.scss';
-import Left from '../assets/left.png'
-import Right from '../assets/right.png'
+import Left from '../assets/left.png';
+import Right from '../assets/right.png';
 
 function Slideshow({ ficheSelection }) {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -14,24 +14,30 @@ function Slideshow({ ficheSelection }) {
         setActiveIndex((prevIndex) => (prevIndex === 0 ? ficheSelection.pictures.length - 1 : prevIndex - 1));
     };
 
-    // Numéro de la diapositive
-    const currentSlideNumber = activeIndex + 1;
-    const totalSlides = ficheSelection.pictures.length;
+    const nbImages = ficheSelection.pictures.length > 1;
 
     return (
         <div className="slider">
-            <div className="slider__prev" onClick={prevSlide}>
-                <img src={Left} alt="left arrow" />
-            </div>
+            {nbImages && (
+                <div className="slider__prev" onClick={prevSlide}>
+                    <img src={Left} alt="left arrow" />
+                </div>
+            )}
             {ficheSelection.pictures.map((picture, index) => (
                 <div key={index} className={index === activeIndex ? 'slide active' : 'slide'}>
                     <img src={picture} alt={`pic ${index + 1}`} className="slider__img"/>
                 </div>
             ))}
-            <div className="slider__next" onClick={nextSlide}>
-                <img src={Right} alt="right arrow" />
-            </div>
-            <div className="slider__counter"><p>{currentSlideNumber} / {totalSlides}</p></div>
+            {nbImages && (
+                <div className="slider__next" onClick={nextSlide}>
+                    <img src={Right} alt="right arrow" />
+                </div>
+            )}
+            {nbImages && (
+                <div className="slider__counter">
+                    {activeIndex + 1} / {ficheSelection.pictures.length}
+                </div>
+            )}
         </div>
     );
 }

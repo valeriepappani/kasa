@@ -46,11 +46,11 @@
     }
 
     &__content {
-        background-color: $background;
+        background-color: #F6F6F650;
         padding: 25px 20px;
         font-size: 18px;
         font-weight: 400;
-        color: $main-color;
+        color: $secondary-color;
         margin: 0;
 
         @media (max-width: 425px) {
