@@ -42,13 +42,24 @@
         @media (max-width: 425px) {
             font-size: 13px;
         }
-
     }
 
+        &__animation {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+    
+            &.open {
+                max-height: 100%;
+            }
+        }
+        
+
     &__content {
-        background-color: #F6F6F650;
+        background-color: rgba(246, 246, 246, 0.45);
         padding: 25px 20px;
         font-size: 18px;
+        line-height:26px;
         font-weight: 400;
         color: $secondary-color;
         margin: 0;
@@ -60,6 +71,7 @@
 
     &__icon {
         cursor: pointer;
+        transition: all 0.2s ease-in-out;
 
         @media (max-width: 425px) {
             width: 12px;

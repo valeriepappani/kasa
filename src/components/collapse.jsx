@@ -6,19 +6,16 @@ function Collapse({ title, content }) {
 
     const [isOpen, setIsOpen] = useState(false)
 
-    return isOpen ? (
-        <div className='collapse' >
-            <div className="collapse__encart">
-                <h2 className="collapse__title active" > {title}</h2>
-                <img src={icon} alt="icon dropdown" className="collapse__icon ouvert" onClick={() => setIsOpen(false)}></img>
-            </div>
-            <div className="collapse__content">{content}</div>
-        </div>
-    ) : (
+    return (
         <div className='collapse'>
             <div className="collapse__encart">
-                <h2 className="collapse__title false"> {title}</h2>
-                <img src={icon} alt="icon dropdown" className="collapse__icon fermer" onClick={() => setIsOpen(true)}></img>
+                <h2 className={`collapse__title ${isOpen ? 'active' : 'false'}`}> {title}</h2>
+                <img src={icon} alt="icon dropdown" className={`collapse__icon ${isOpen ? 'ouvert' : 'fermer'}`} onClick={() => setIsOpen(!isOpen)}></img>
+            </div>
+            <div className={`collapse__animation ${isOpen ? 'open' : ''}`}>
+                <div className="collapse__content">
+                    {content}
+                </div>
             </div>
         </div>
     )

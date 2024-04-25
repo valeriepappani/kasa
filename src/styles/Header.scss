@@ -1,5 +1,13 @@
 @import 'index.scss';
 
+.navbar__link.active {
+    text-decoration: underline;
+}
+
+.Link {
+    display:flex;
+}
+
 .navbar {
     display: flex;
     flex-direction: row;
@@ -18,7 +26,8 @@
         height: 68px;
 
         @media (max-width:425px) {
-            height: 30px;
+            height: auto;
+            width:145px;
         }
     }
 
@@ -27,15 +36,12 @@
         font-size: 24px;
         font-weight: 500;
         text-decoration: none;
-        color: $main-color;
-
-        &:focus {
-            text-decoration: underline;
-        }
+        color: $secondary-color;
 
         @media (max-width:425px) {
             padding-left: 26px;
             font-size: 12px;
         }
     }
+
 }
