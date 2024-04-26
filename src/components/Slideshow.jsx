@@ -17,9 +17,11 @@ function Slideshow({ ficheSelection }) {
     return (
         <div className="slider">
 
-            <div className="slider__prev" onClick={prevSlide}>
-                <img src={Left} alt="left arrow" />
-            </div>
+            {ficheSelection.pictures.length > 1 && (
+                <div className="slider__prev" onClick={prevSlide}>
+                    <img src={Left} alt="left arrow" />
+                </div>
+            )}
 
             {ficheSelection.pictures.map((picture, index) => (
                 <div key={index} className={index === activeIndex ? 'slide active' : 'slide'}>
@@ -27,13 +29,17 @@ function Slideshow({ ficheSelection }) {
                 </div>
             ))}
 
-            <div className="slider__next" onClick={nextSlide}>
-                <img src={Right} alt="right arrow" />
-            </div>
+            {ficheSelection.pictures.length > 1 && (
+                <div className="slider__next" onClick={nextSlide}>
+                    <img src={Right} alt="right arrow" />
+                </div>
+            )}
 
-            <div className="slider__counter">
-                {activeIndex + 1} / {ficheSelection.pictures.length}
-            </div>
+            {ficheSelection.pictures.length > 1 && (
+                <div className="slider__counter">
+                    {activeIndex + 1} / {ficheSelection.pictures.length}
+                </div>
+            )}
 
         </div>
     );

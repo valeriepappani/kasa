@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import data from '../datas/logements.json';
 import '../styles/Location.scss';
 import Collapse from '../components/collapse';
 import Slideshow from '../components/Slideshow';
-import Rating from '../components/rating'
-import { useParams } from 'react-router-dom';
+import Rating from '../components/rating';
 
 function Location() {
-
     const { id } = useParams(); // Id de l'url
-    const ficheSelection = data.find((element) => element.id === id); 
+    const navigate = useNavigate();
+    const [ficheSelection, setFicheSelection] = useState(null);
+
+    useEffect(() => {
+        const selectedFiche = data.find((element) => element.id === id);
+        if (!selectedFiche) {
+            navigate('/error'); // Redirige vers la page d'erreur si l'ID n'est pas valide
+        } else {
+            setFicheSelection(selectedFiche);
+        }
+    }, [id, navigate]);
+
+    if (!ficheSelection) {
+        return null;
+    }
 
     return (
         <div className="ficheAppart">
@@ -29,7 +42,6 @@ function Location() {
                         <p className="ficheAppart__host--name">{ficheSelection.host.name}</p>
                         <img className="ficheAppart__host--picture" src={ficheSelection.host.picture} alt="" />
                     </div>
-                    {/* <p>{ficheSelection.rating}</p> */}
                     <Rating value={ficheSelection.rating} />                    
                 </div>
             </div>
@@ -48,7 +60,7 @@ function Location() {
                     } />
             </div>
         </div>
-    )
+    );
 }
 
-export default Location;
+export default Location
