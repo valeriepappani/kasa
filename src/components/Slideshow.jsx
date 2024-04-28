@@ -45,4 +45,4 @@ function Slideshow({ ficheSelection }) {
     );
 }
 
-export default Slideshow;
+export default Slideshow
