@@ -44,10 +44,14 @@
     border-radius: 0 3px 3px 0;
     z-index:100;
 
+    img {
+        width: 47px;
+    } 
+
     @media(max-width:425px) {
-        top:45%;
+        top:50%;
         img {
-            width: 13px !important;
+            width: 12px;
         }
     }
 }

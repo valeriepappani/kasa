@@ -1,8 +1,12 @@
 @import 'index.scss';
 
 .Gallery {
-    margin: 45px 100px;
+    margin: 43px 100px;
     list-style-type: none;
+
+    @media (max-width: 768px) {
+        margin: 40px 50px;
+    }
 
     @media (max-width: 425px) {
         margin: 20px;
@@ -16,9 +20,12 @@
     grid-template-columns: 1fr 1fr 1fr;
     padding: 56px 50px;
     background-color: $background;
-    border: 25px;
-    gap: 50px;
-    // z-index: -10;
+    // border: 25px;
+    gap: 60px 50px;
+
+    @media (max-width: 768px){
+        grid-template-columns: 1fr 1fr;
+    }
 
     @media (max-width: 425px) {
         grid-template-columns: 1fr;
@@ -51,12 +58,13 @@
         &--title {
             position: absolute;
             bottom: 0;
-            padding: 0 20px;
+            padding: 20px;
             font-size: 18px;
             line-height: 26px;
-            font-weight: 500;
+            font-weight: 700;
             color: white;
             z-index:10;
+            margin: 0;
         }
 
         &::after {

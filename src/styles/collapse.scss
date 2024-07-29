@@ -6,12 +6,12 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
-    width: 70%;
-    margin-right:auto;
-    margin-left:auto;
+    margin-right: auto;
+    margin-left: auto;
 
     @media(max-width: 425px) {
-        width:100%;
+        width: 100%;
+        gap: 20px;
     }
 }
 
@@ -19,10 +19,9 @@
     width: 100%;
 
     @media (max-width: 425px) {
-        width: 90%;
-        margin: 0 20px;
+        width: 100%;
+        margin: 0;
     }
-
 
     &__encart {
         display: flex;
@@ -31,10 +30,19 @@
         background-color: $main-color;
         padding: 10px 20px 10px 10px;
         border-radius: 10px;
+
+        img {
+            width: 24px;
+
+            @media (max-width: 425px) {
+                width: 16px;
+            }
+        }
+
     }
 
     &__title {
-        font-size: 24px;
+        font-size: 18px;
         font-weight: 700;
         color: white;
         margin: 0;
@@ -44,28 +52,35 @@
         }
     }
 
-        &__animation {
-            max-height: 0px;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out;
-    
-            &.open {
-                max-height: 350px;
-            }
+
+    &__animation {
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+
+        &.open {
+            max-height: 350px;
         }
-        
+    }
 
     &__content {
-        background-color: rgba(246, 246, 246, 0.45);
+        background-color: rgba($background, 0.6);
         padding: 25px 20px;
         font-size: 18px;
-        line-height:26px;
+        line-height: 26px;
         font-weight: 400;
         color: $secondary-color;
         margin: 0;
 
         @media (max-width: 425px) {
             font-size: 12px;
+            line-height: 17px;
+            padding: 13px 20px;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
         }
     }
 
@@ -81,10 +96,27 @@
 
 .ouvert {
     transform: rotate(-180deg);
-    transition: all .4s ease-out;
+    transition: all 0.4s ease-out;
 }
 
 .fermer {
     transform: rotate(0deg);
-    transition: all .4s ease-out;
+    transition: all 0.4s ease-out;
+}
+
+/*Spécificités de la page à propos*/
+.propos-collapse {
+    width: 70%;
+
+    @media (max-width: 425px) {
+        width: 90%;
+    }
+
+    .collapse__title {
+        font-size: 24px;
+
+        @media (max-width: 425px) {
+            font-size: 13px;
+        }
+    }
 }

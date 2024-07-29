@@ -9,6 +9,10 @@
     margin: 45px 100px;
     border-radius: 25px;
 
+    @media (max-width: 768px) {
+        margin:40px 50px;
+    }
+
     @media (max-width: 425px) {
         height: 111px;
         margin: 20px;
@@ -31,6 +35,10 @@
         font-size: 48px;
         font-weight: 500;
         padding: 20px;
+
+        @media (max-width: 768px) {
+            font-size: 40px;
+        }
 
         @media (max-width: 425px) {
             font-size: 24px;

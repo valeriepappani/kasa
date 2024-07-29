@@ -5,6 +5,7 @@ import '../styles/Location.scss';
 import Collapse from '../components/collapse';
 import Slideshow from '../components/Slideshow';
 import Rating from '../components/rating';
+import HostDetails from '../components/HostDetails'
 
 function Location() {
     const { id } = useParams(); // Id de l'url
@@ -39,18 +40,19 @@ function Location() {
                 </div>
                 <div className="ficheAppart__host">
                     <div className="ficheAppart__host--haut">
-                        <p className="ficheAppart__host--name">{ficheSelection.host.name}</p>
+                        <HostDetails host={ficheSelection.host} />
                         <img className="ficheAppart__host--picture" src={ficheSelection.host.picture} alt="" />
                     </div>
-                    <Rating value={ficheSelection.rating} />                    
+                    <Rating value={ficheSelection.rating} />
                 </div>
             </div>
 
             <div className="ficheAppart__part2">
                 <Collapse
                     title="Description"
-                    content={ficheSelection.description} 
-                    className="ficheAppart__part2--collapse"/>
+                    content={ficheSelection.description}
+                    className="ficheAppart__part2--collapse "
+                    differentclass="collapse-location" />
                 <Collapse
                     title="Équipements"
                     content={
